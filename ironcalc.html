@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Document</title>
+
+</head>
+<body>
+
+    <label for="">lump</label>
+    <input type="number" name="lump" id="lump">
+    <input type="button" onclick="calcLump()" value="Calc">
+
+    <label for="">bar</label>
+    <input type="number" name="bar" id="bar">
+    <input type="button" onclick="calcBar()" value="Calc">
+
+    <label for="">ingot</label>
+    <input type="number" name="ingot" id="ingot">
+    <input type="button" onclick="calcIngot()" value="Calc">
+
+    <label for="">ore</label>
+    <input type="number" name="ore" id="ore">
+    <input type="button" onclick="calcOre()" value="Calc">
+    <br><br>
+
+
+    <label for="">sheet</label>
+    <input type="number" name="sheet" id="sheet">
+    <input type="button" onclick="calcSheet()" value="Calc">
+
+    <label for="">band</label>
+    <input type="number" name="band" id="band">
+    <input type="button" onclick="calcBand()" value="Calc">
+
+    <label for="">nail</label>
+    <input type="number" name="nail" id="nail">
+    <input type="button" onclick="calcNail()" value="Calc">
+
+    <script>
+        function calcLump(){
+            lumps = $("#lump").val();
+            $("#bar").val(lumps/8);
+            $("#ingot").val(lumps/40);
+            $("#ore").val(lumps);
+
+            $("#sheet").val(0);
+            $("#band").val(0);
+            $("#nail").val(lumps);
+        }
+        function calcBar(){
+            bars = $("#bar").val();
+            $("#lump").val(bars*8);
+            $("#ingot").val(bars/5);
+            $("#ore").val(bars*8);
+
+            $("#sheet").val(0);
+            $("#band").val(bars/5);
+            $("#nail").val(0);
+        }
+        function calcIngot(){
+            ingots = $("#ingot").val();
+            $("#bar").val(ingots*8);
+            $("#lump").val(ingots*40);
+            $("#ore").val(ingots*40);
+
+            $("#sheet").val(ingots/2);
+            $("#band").val(0);
+            $("#nail").val(0);
+        }
+
+        function calcOre(){
+            ores = $("#ore").val();
+            $("#bar").val(ores/8);
+            $("#lump").val(ores);
+            $("#ingot").val(ores/40);
+
+            $("#sheet").val(0);
+            $("#band").val(0);
+            $("#nail").val(0);
+        }
+
+        function calcSheet(){
+            sheets = $("#sheet").val();
+            $("#ingot").val(sheet*2);
+            $("#bar").val(0);
+            $("#lump").val(0);
+            $("#ore").val(0);
+
+            $("#sheet").val(sheets);
+            $("#band").val(0);
+            $("#nail").val(0);
+        }
+        function calcBand(){
+            bands = $("#band").val();
+            $("#ingot").val(0);
+            $("#bar").val(bands*5);
+            $("#lump").val(0);
+            $("#ore").val(0);
+
+            $("#sheet").val(0);
+            $("#band").val(bands);
+            $("#nail").val(0);
+        }
+        function calcNail(){
+            nails = $("#nail").val();
+            $("#ingot").val(0);
+            $("#bar").val(0);
+            $("#lump").val(nails);
+            $("#ore").val(0);
+
+            $("#sheet").val(0);
+            $("#band").val(0);
+            $("#nail").val(nails);
+        }
+        
+    </script>
+    
+</body>
+</html>
