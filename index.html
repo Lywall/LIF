@@ -7,40 +7,90 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Document</title>
 
+    <style> 
+        body {
+            background-image:  url("uniconios.jpg");
+            background-repeat: no- repeat;
+            background-color: #bbbbbb;
+        }
+
+        div {
+            background-color: #ff90f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(225, 0, 255);
+            font-size: 120px;
+        }
+    </style>
+
 </head>
 <body>
+    <h1>Life is Super-Cuqui</h1>
+    <div>
+        <label for="">lump</label>
+        <input type="number" name="lump" id="lump">
+        <input type="button" onclick="calcLump()" value="Calc">
 
-    <label for="">lump</label>
-    <input type="number" name="lump" id="lump">
-    <input type="button" onclick="calcLump()" value="Calc">
+        <label for="">bar</label>
+        <input type="number" name="bar" id="bar">
+        <input type="button" onclick="calcBar()" value="Calc">
 
-    <label for="">bar</label>
-    <input type="number" name="bar" id="bar">
-    <input type="button" onclick="calcBar()" value="Calc">
+        <label for="">ingot</label>
+        <input type="number" name="ingot" id="ingot">
+        <input type="button" onclick="calcIngot()" value="Calc">
 
-    <label for="">ingot</label>
-    <input type="number" name="ingot" id="ingot">
-    <input type="button" onclick="calcIngot()" value="Calc">
-
-    <label for="">ore</label>
-    <input type="number" name="ore" id="ore">
-    <input type="button" onclick="calcOre()" value="Calc">
-    <br><br>
+        <label for="">ore</label>
+        <input type="number" name="ore" id="ore">
+        <input type="button" onclick="calcOre()" value="Calc">
+        <br><br>
 
 
-    <label for="">sheet</label>
-    <input type="number" name="sheet" id="sheet">
-    <input type="button" onclick="calcSheet()" value="Calc">
+        <label for="">sheet</label>
+        <input type="number" name="sheet" id="sheet">
+        <input type="button" onclick="calcSheet()" value="Calc">
 
-    <label for="">band</label>
-    <input type="number" name="band" id="band">
-    <input type="button" onclick="calcBand()" value="Calc">
+        <label for="">band</label>
+        <input type="number" name="band" id="band">
+        <input type="button" onclick="calcBand()" value="Calc">
 
-    <label for="">nail</label>
-    <input type="number" name="nail" id="nail">
-    <input type="button" onclick="calcNail()" value="Calc">
+        <label for="">nail</label>
+        <input type="number" name="nail" id="nail">
+        <input type="button" onclick="calcNail()" value="Calc">
+    
+    </div>
+    <br><br><br>
+    <div>
+        <label for="vosi">vostakus ingot</label>
+        <input type="number" name="vosi" id="ivostakus">
+        <input type="button" onclick="calcVos()" value="Calc">
+
+        <label for="iallo">Irregular alloy</label>
+        <input type="number" name="iallo" id="ialloy">
+        <input type="button" onclick="calcAll()" value="Calc">
+
+    <p id="alloymats"></p>
+    </div>
+    </body>
+
 
     <script>
+        function calcAll(){
+            iallois = $("#ialloy").val();
+            $("#alloymats").html("For "+iallois+" you need "+iallois*2+" steels bar, "+iallois*2+" coppers bar, "+iallois*2+" lumps of silver and "+iallois+" lumps of gold");
+
+        }
+        function calcVos(){
+            vosin = $("#ivostakus").val();
+            $("#ialloy").val(vosin*150);
+
+        }
+        function calcIAlloy(){
+            alloys = $("#ivostakus").val();
+            $("#ialloy").val(vosin*150);
+
+        }
         function calcLump(){
             lumps = $("#lump").val();
             $("#bar").val(lumps/8);
